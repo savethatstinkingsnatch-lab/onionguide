@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+  --font-serif: "Source Serif 4", Palatino, "Palatino Linotype", "Book Antiqua", serif;
+  --color-paper: #f4efe4;
+  --color-ink: #2c2416;
+  --color-muted: #6e6458;
+  --color-amber: #c4622d;
+  --color-olive: #3e4a36;
+  --radius-lg: 0.75rem;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-serif);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    line-height: 1.6;
+    font-size: 1.0625rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    line-height: 1.12;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-amber);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-amber) 32%, var(--color-paper));
+    color: var(--color-ink);
+  }
+}
+
+.drop-cap::first-letter {
+  font-family: var(--font-display);
+  float: left;
+  font-size: 3.2rem;
+  line-height: 0.78;
+  padding-right: 0.1em;
+  font-weight: 640;
+  color: var(--color-amber);
+}
+
+.field-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.field-table th {
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: 0.95rem;
+  padding: 0.45rem 1rem 0.55rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 22%, transparent);
+}
+
+.field-table td {
+  vertical-align: top;
+  padding: 0.75rem 1rem 0.75rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+}
+
+.page-in {
+  animation: page-in 320ms ease-out;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-in {
+    animation: none;
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "The Onion Field Book",
+      "hasCanvas": false,
+      "bodyTextLen": 1459,
+      "bodyTextHash": "d89f4d1d9f21811e2a42d5bfa81788f4bc5fbba9f655033b5392606c148c4a07",
+      "bodyTextPrefix": "Skip to the chapter A field guide The Onion Field Book Jessica M",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "The Onion Field Book",
+      "hasCanvas": false,
+      "bodyTextLen": 1336,
+      "bodyTextHash": "e8cdd04de04a91fc64c70baaf7415e4d850f237e5ad8958f22eedf8ab97b3c4b",
+      "bodyTextPrefix": "Skip to the chapter The Onion Field Book Field guide Mark Plate ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
