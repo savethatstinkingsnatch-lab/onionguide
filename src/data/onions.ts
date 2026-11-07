@@ -984,6 +984,10 @@ export const CHAPTERS: Chapter[] = [
         title: "Where the dates come from",
         text: "The calendars follow cooperative-extension practice: short-day and fall-planted in the South, long-day and spring-planted in the North, with the latitude exception for mild marine climates that share a zone number with a much warmer place. Seed handling — isolation from other Allium cepa, including shallots; a group of bulbs rather than one; cool and very dry storage — is the home seed-saving standard. A hybrid packet will not come true. Move every window with your last frost, your first hard heat, and the year you actually get.",
       },
+      {
+        kind: "p",
+        text: "Sources: [1] University of Minnesota Extension, Growing onions in home gardens, extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/growing-onions. [2] Penn State Extension, Onion Production, extension.psu.edu/onion-production. [3] National Center for Home Food Preservation, Freezing Garlic-in-Oil, nchfp.uga.edu/how/freeze/vegetable/freezing-garlic-in-oil. [4] ASPCA Animal Poison Control, Onion, aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/onion. [5] Seed Savers Exchange, Growing Guide: Onions, seedsavers.org/grow-onion. [6] USDA Plant Hardiness Zone Map, planthardiness.ars.usda.gov.",
+      },
     ],
   },
 
