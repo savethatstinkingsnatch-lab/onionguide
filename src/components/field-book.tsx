@@ -146,7 +146,7 @@ export function FieldBook() {
           </button>
           <div className="min-w-0 flex-1">
             <p className="truncate font-display text-lg leading-tight">
-              {chapter.id === "front" ? "Onions: Seed to Seed" : chapter.title}
+              {chapter.id === "front" ? "Volume 8: Onions (The Education Revolution)" : chapter.title}
             </p>
             <p className="truncate text-sm text-muted">
               {chapter.num ? `Chapter ${chapter.num}` : "Field guide"}
@@ -181,7 +181,7 @@ export function FieldBook() {
                     key={item.id}
                     id={item.id}
                     num={item.num}
-                    title={item.id === "front" ? "Onions: Seed to Seed" : item.title}
+                    title={item.id === "front" ? "Volume 8: Onions (The Education Revolution)" : item.title}
                     active={item.id === chapter.id}
                     marked={marks.includes(item.id)}
                     onOpen={openChapter}
@@ -247,7 +247,7 @@ function BookSpine({
           onClick={() => onOpen("front")}
           className={`${press} mt-2 text-left font-display text-3xl leading-none`}
         >
-          Onions: Seed to Seed
+          Volume 8: Onions (The Education Revolution)
         </button>
         <p className="mt-3 text-sm leading-snug text-paper/75">Blue and the Awesome Dudes</p>
         <p className="mt-1 text-sm leading-snug text-paper/75">
@@ -337,7 +337,7 @@ function FrontMatter({ marks, onOpen }: { marks: string[]; onOpen: (id: string) 
         />
         <div>
           <p className="text-sm text-amber">The Education Revolution Pocket Guide, Volume 8</p>
-          <h1 className="mt-2 font-display text-5xl text-ink sm:text-6xl">Onions: Seed to Seed</h1>
+          <h1 className="mt-2 font-display text-5xl text-ink sm:text-6xl">Volume 8: Onions (The Education Revolution)</h1>
           <p className="mt-3 font-display text-xl italic text-amber">Blue and the Awesome Dudes</p>
           <p className="mt-5 max-w-xl text-xl leading-snug text-ink">
             Grow them from seed, lift them when the tops fall, save the seed from the bulbs worth keeping, and store each crop the way it actually lasts.

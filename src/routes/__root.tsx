@@ -3,7 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Onions: Seed to Seed";
+const APP_NAME = "Volume 8: Onions (The Education Revolution)";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -14,7 +14,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Onions: Seed to Seed, a free pocket guide by Blue and the Awesome Dudes. Day length, USDA zones, companion plants, and how to grow onions from seed to seed.",
+          "Volume 8: Onions (The Education Revolution), a free pocket guide by Blue and the Awesome Dudes. Day length, USDA zones, companion plants, and how to grow onions and save their seed.",
       },
       { name: "theme-color", content: "#3e4a36" },
     ],

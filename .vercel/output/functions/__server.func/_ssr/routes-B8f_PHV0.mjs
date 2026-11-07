@@ -1,7 +1,7 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { K as require_react, b as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as Bookmark, i as Check, r as Menu, t as X } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CWCGuS5F.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-B8f_PHV0.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var DAY_GROUPS = [
@@ -1053,7 +1053,7 @@ function FieldBook() {
 								className: "min-w-0 flex-1",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "truncate font-display text-lg leading-tight",
-									children: chapter.id === "front" ? "Onions: Seed to Seed" : chapter.title
+									children: chapter.id === "front" ? "Volume 8: Onions (The Education Revolution)" : chapter.title
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "truncate text-sm text-muted",
 									children: chapter.num ? `Chapter ${chapter.num}` : "Field guide"
@@ -1092,7 +1092,7 @@ function FieldBook() {
 								children: CHAPTERS.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChapterLink, {
 									id: item.id,
 									num: item.num,
-									title: item.id === "front" ? "Onions: Seed to Seed" : item.title,
+									title: item.id === "front" ? "Volume 8: Onions (The Education Revolution)" : item.title,
 									active: item.id === chapter.id,
 									marked: marks.includes(item.id),
 									onOpen: openChapter,
@@ -1155,7 +1155,7 @@ function BookSpine({ chapterId, marks, zone, day, onOpen }) {
 					type: "button",
 					onClick: () => onOpen("front"),
 					className: `${press} mt-2 text-left font-display text-3xl leading-none`,
-					children: "Onions: Seed to Seed"
+					children: "Volume 8: Onions (The Education Revolution)"
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-3 text-sm leading-snug text-paper/75",
@@ -1237,7 +1237,7 @@ function FrontMatter({ marks, onOpen }) {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
 					className: "mt-2 font-display text-5xl text-ink sm:text-6xl",
-					children: "Onions: Seed to Seed"
+					children: "Volume 8: Onions (The Education Revolution)"
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-3 font-display text-xl italic text-amber",
