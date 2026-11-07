@@ -30,10 +30,10 @@ export const DAY_GROUPS: { id: DayGroup; label: string; hint: string }[] = [
 ];
 
 const keepLong =
-  "After the necks are fully dry, store at 32–40°F and about 65–70% humidity, in the dark, in mesh or a crate. Keep them away from apples and potatoes. Pungent long-day bulbs from a good cure often keep six to eight months.";
+  "After the necks are fully dry, store at 32–40°F and about 65–70% humidity, in the dark, in mesh or a crate. Keep them away from apples and potatoes. Many pungent long-day varieties keep six to eight months when the cure was real. Sweeter ones in the same group, such as Walla Walla, do not. Day length is not a storage guarantee.";
 
 const keepSweet =
-  "Sweet and short-day bulbs often keep one to three months, not through winter. Eat thick necks first. A refrigerator, unwashed, in a breathable bag, buys a little time and costs some texture.";
+  "Many sweet and short-day varieties keep one to three months, not through winter. Red Creole is a short-day onion that usually keeps longer than a Grano or Granex. Eat thick necks first. A refrigerator, unwashed, in a breathable bag, buys a little time and costs some texture. The variety decides, not the day-length label.";
 
 export const ZONES: ZoneInfo[] = [
   {
@@ -110,7 +110,7 @@ export const ZONES: ZoneInfo[] = [
       varieties:
         "Intermediate hybrids: Candy, Superstar, Cabernet, Sierra Blanca. For seed saving, buy an open-pollinated intermediate and make the seller tell you the day length. Many packets in this band are hybrids and will not come true.",
       sow: "December to January, indoors.",
-      plant: "February to March. Do not bury them. One inch is the whole depth.",
+      plant: "February to March. Seed stays shallow. Transplants only deep enough to stand.",
       harvest: "June to July, before heat sits on necks that are still thick.",
       seed: "Mulch selected bulbs through a normal zone 7 winter, or store them cold and replant in February. Seed heads in June and July. Isolate from any shallot that is allowed to flower.",
       keep: "Intermediate sweets often keep two to four months if the necks dried. Eat the soft ones first. The pungent end of the group keeps longer.",
@@ -138,9 +138,9 @@ export const ZONES: ZoneInfo[] = [
     regions: "Gulf coast, southern Texas, southern California, north and central Florida",
     typical: "short",
     fit: {
-      headline: "Short-day only, timed so the bulb swells before May heat.",
+      headline: "Short-day onions, timed so the bulb swells before May heat. That is because these days are short, not because a zone number bans every other type.",
       varieties:
-        "Texas Early Grano 502, Red Creole, and Granex types. Skip the long-day packets even when the store rack leads with them.",
+        "Texas Early Grano 502, Red Creole, and Granex types when you have marked shorter days. If your summer days are actually long, change the day control — a zone 9 label is not the reason to skip a long-day packet.",
       sow: "September to October.",
       plant: "November to December. In the low desert this is what gets a bulb before heat shuts the plant down.",
       harvest: "April to May.",
@@ -183,34 +183,59 @@ export const ZONES: ZoneInfo[] = [
   },
 ];
 
-const SHORT_IN_THE_NORTH =
-  "Short-day onions start bulbing as soon as days pass ten to twelve hours, while the plants are still small. You get marbles, then a crop that thinks the year is over.";
+const shortVarieties =
+  "Texas Early Grano 502 and Red Creole are open-pollinated. Red Creole is hotter and usually keeps longer than a Grano or Granex. Yellow Granex and Texas Legend are sweet hybrids — eat them, don't save them. Varieties inside the group want different hours. Read the packet.";
+
+const midVarieties =
+  "Candy, Superstar, Cabernet, or Sierra Blanca if a hybrid is fine. For seed, find an open-pollinated intermediate and ask for its day length. This list follows the day length you set, not the zone number.";
+
+const longVarieties =
+  "Stuttgarter, Southport Red Globe, New York Early, Jaune Paille des Vertus, and Borettana if you may save seed. Copra, Patterson, Cortland, or Redwing if you will buy seed again. Walla Walla and Yellow Sweet Spanish are milder long-day types and usually poor keepers.";
 
 export function resolvePlan(zone: ZoneInfo, day: DayGroup): PlanResult {
   if (day === zone.typical) return { tone: "fit", plan: zone.fit };
 
-  const northern = ["3", "4", "5", "6"].includes(zone.id);
-  if (northern && day === "short") {
+  const cold = ["3", "4", "5", "6"].includes(zone.id);
+
+  // A low zone number is a cold winter, not a latitude. High country in the
+  // South can be zone 5 and still need a short-day onion.
+  if (cold && day === "short") {
     return {
-      tone: "fail",
+      tone: "warn",
       plan: {
-        ...zone.fit,
-        headline: SHORT_IN_THE_NORTH,
-        varieties: `Do not sow short-day seed here. Use the long-day list instead: ${zone.fit.varieties}`,
+        headline:
+          "Short-day onions, timed by this zone's frost. A cold zone can still have short summer days. The zone does not reject the type.",
+        varieties: shortVarieties,
+        sow:
+          zone.fit.sow +
+          " Use that indoor start so the plants have leaves before days reach about 10–12 hours. These winters are too hard for a southern fall planting.",
+        plant: zone.fit.plant,
+        harvest:
+          "They often finish earlier than a long-day onion in the same bed, once days pass about 10–12 hours. Treat " +
+          zone.fit.harvest +
+          " as the latest window, and pull when the tops fall.",
+        seed: zone.fit.seed,
+        keep: keepSweet,
       },
     };
   }
 
-  if (northern && day === "mid") {
+  if (cold && day === "mid") {
     return {
       tone: "warn",
       plan: {
-        ...zone.fit,
         headline:
-          "Intermediate varieties can finish here when summers are warm, but a long-day storage onion is the safer packet.",
-        varieties:
-          "Candy, Cabernet, or an intermediate open-pollinated variety if you can find one. Same dates as the long-day crop. Hybrids will not come true if you save seed.",
-        harvest: `${zone.fit.harvest} Intermediate types often fall a week or two earlier, and they rarely keep as long as Copra or Patterson.`,
+          "Intermediate onions, if your days fall between the short-day and long-day triggers. A zone that looks northern is not a reason to change packets.",
+        varieties: midVarieties,
+        sow:
+          zone.fit.sow +
+          " Give them that same head start. A short, cool spring can start bulbing before the plants are large.",
+        plant: zone.fit.plant,
+        harvest:
+          zone.fit.harvest +
+          " Intermediate types often fall a week or two before a long-day storage onion. How long they keep depends on the variety.",
+        seed: zone.fit.seed,
+        keep: "A few months is common for milder intermediate varieties after a real cure. Pungent ones keep longer. Don't borrow Copra's shelf life for a sweet.",
       },
     };
   }
@@ -219,11 +244,11 @@ export function resolvePlan(zone: ZoneInfo, day: DayGroup): PlanResult {
     return {
       tone: "warn",
       plan: {
-        headline: "Long-day onions can bulb here, and they often meet July heat before the necks dry.",
-        varieties:
-          "Choose a storage long-day only if your summer nights cool off. Otherwise stay with an intermediate. Copra and Patterson are the usual hybrids; Stuttgarter if you want open-pollinated seed later.",
-        sow: "January, indoors.",
-        plant: "March, shallow, four inches apart.",
+        headline:
+          "Long-day onions can bulb where summer days are actually long. In much of zone 7 they meet July heat before the necks dry. The heat is the catch, not a zone ban.",
+        varieties: longVarieties,
+        sow: "January, indoors, on this zone's frost calendar.",
+        plant: "March. Seed a quarter to a half inch deep. Transplants deep enough to stand, not buried.",
         harvest: "July. Pull sooner if necks stay thick and the weather turns wet — those bulbs are for the kitchen, not the crate.",
         seed: zone.fit.seed,
         keep: keepLong,
@@ -235,9 +260,9 @@ export function resolvePlan(zone: ZoneInfo, day: DayGroup): PlanResult {
     return {
       tone: "warn",
       plan: {
-        headline: "Treat the upper South as a fall crop. Short-day onions go in before winter and come out in late spring.",
-        varieties:
-          "Texas Early Grano 502 or Red Creole if you may save seed. Granex and Texas Legend if you want a sweet hybrid and will not save seed.",
+        headline:
+          "Where days are short, treat zone 7 as a fall crop. That timing is the winter, not a rule that short-day onions belong to high zone numbers.",
+        varieties: shortVarieties,
         sow: "August to September.",
         plant: "October to November. Pencil-thick going into winter, not already swelling.",
         harvest: "May to June.",
@@ -252,9 +277,8 @@ export function resolvePlan(zone: ZoneInfo, day: DayGroup): PlanResult {
       tone: "warn",
       plan: {
         headline:
-          "A high zone number with long summer days is a marine climate, not the South. Seattle is not Atlanta. Grow long-day onions.",
-        varieties:
-          "Stuttgarter, Patterson, Copra, Yellow Sweet Spanish. Walla Walla is the famous overwinter sweet in this climate, and it does not store.",
+          "Long summer days in zone 8 or 9 are a place, usually a marine one. Seattle is not Atlanta. Grow the long-day onion your days asked for. The zone only times the frost.",
+        varieties: longVarieties,
         sow: "Spring path: February indoors. Overwinter path: direct-sow in August or September where winter lows stay near or above 10°F.",
         plant: "April for transplants. Fall sowings stay in the bed under mulch.",
         harvest: "August for a spring planting. June to July the next year for an overwintered bed.",
@@ -268,35 +292,45 @@ export function resolvePlan(zone: ZoneInfo, day: DayGroup): PlanResult {
     return {
       tone: "warn",
       plan: {
-        headline: "Intermediate-day onions are the overlap crop, at home in cooler zone 8 summers and on the 35th to 40th parallel.",
-        varieties: "Candy, Superstar, Cabernet, Sierra Blanca — hybrids. Save seed only from an open-pollinated intermediate.",
+        headline:
+          "Intermediate-day onions for the overlap, where days run about 12–14 hours. Cooler zone 8 summers can finish them. The zone number did not make the choice.",
+        varieties: midVarieties,
         sow: "December to February indoors, or start a fall transplant crop in August where winters are mild.",
         plant: "February to April for the spring bed. October to November for a fall bed.",
         harvest: "June to August from spring planting. May to June from a fall planting.",
         seed: zone.fit.seed,
-        keep: "Figure on two to four months after a proper cure, less if the necks never dried.",
+        keep: "A few months after a proper cure is typical for milder varieties, less if the necks never dried. Pungent ones keep longer.",
       },
     };
   }
 
   if ((zone.id === "10" || zone.id === "11") && day !== "short") {
     return {
-      tone: "fail",
+      tone: "warn",
       plan: {
         headline:
-          "Long-day and most intermediate onions wait for a day length this climate never delivers. They make leaves, not bulbs.",
-        varieties:
-          "Buy the earliest short-day variety on the rack, or plant shallots and bunching onions and skip the experiment.",
+          "Most of zones 10 and 11 never see a 14-hour day, but the zone is not the test. If your latitude really has long or intermediate summers, grow that group. If you are south of about 35°N, switch this control to short-day.",
+        varieties: day === "long" ? longVarieties : midVarieties,
         sow: zone.fit.sow,
         plant: zone.fit.plant,
-        harvest: "Do not plan a storage harvest from long-day seed here. Short-day dates, if you switch back, are: " + zone.fit.harvest,
-        seed: "Seed saving starts from a bulb that actually formed. Without that, there is nothing honest to replant.",
-        keep: zone.fit.keep,
+        harvest:
+          "Use this zone's cool-season window (" +
+          zone.fit.harvest +
+          "). Heat, not the zone label, is what ends the crop. If the bulbs never swell, the days were shorter than the packet needed.",
+        seed: "Save seed only from bulbs that actually formed, and only from an open-pollinated variety. A frost-free winter may need six to ten weeks in the refrigerator before those bulbs will flower.",
+        keep: day === "long" ? keepLong : "Storage follows the variety. Many intermediate sweets keep a few months. Pungent types keep longer.",
       },
     };
   }
 
-  return { tone: "warn", plan: zone.fit };
+  return {
+    tone: "warn",
+    plan: {
+      ...zone.fit,
+      headline: "Use the day length you set for the onion type, and this zone only for frost and heat.",
+      varieties: day === "long" ? longVarieties : day === "mid" ? midVarieties : shortVarieties,
+    },
+  };
 }
 
 export type Companion = {
@@ -377,7 +411,7 @@ export const APART: Companion[] = [
   {
     name: "Other alliums",
     place: "Don't mix garlic, leeks, shallots, and onions to 'protect' each other.",
-    why: "They trade thrips, onion maggot, downy mildew, and white rot. They are not companions. They are the same problem in different shirts. If you have ever had those pests, put this year's onions away from the garlic and the leeks, and keep the whole group off the same ground for three or four years. Shallots are Allium cepa. If they flower beside an onion you are saving seed from, they will cross.",
+    why: "They trade thrips, onion maggot, downy mildew, and white rot. They are not companions. They are the same problem in different shirts. A few years between alliums helps with ordinary pests and leaf diseases. It does not clear white rot. Land that has had it can stay unfit for onions, garlic, leeks, and shallots for decades — the resting structures can survive in soil for 20 to 30 years. Shallots are Allium cepa. If they flower beside an onion you are saving seed from, they will cross.",
   },
 ];
 
@@ -425,7 +459,7 @@ export const CHAPTERS: Chapter[] = [
           },
           {
             t: "Wild onions and death camas",
-            d: "Death camas looks a lot like wild onion and can kill. Real onions smell like onion when you crush a leaf. If it does not smell like onion, do not eat it. When in doubt, leave it. Your hands can carry the smell from one plant to the next, so wash them between plants.",
+            d: "Death camas looks a lot like wild onion and can kill. When in doubt, leave it. A crushed leaf that smells like onion is only a clue, not an identification, and your hands can carry that smell from one plant to the next, so wash them between plants. Never eat a wild plant you cannot identify for certain by more than smell.",
           },
           {
             t: "Garlic or onion in oil",
@@ -458,7 +492,7 @@ export const CHAPTERS: Chapter[] = [
           },
           {
             t: "Pick your onion type",
-            d: "South of about 35 degrees, grow short-day. Between 35 and 40, grow intermediate. North of 40, grow long-day.",
+            d: "South of about 35 degrees, short-day is the usual start. Between 35 and 40, intermediate. North of 40, long-day. Those bands are approximate. Varieties differ — read the hours on the packet.",
           },
           {
             t: "Choose seed, sets, or transplants",
@@ -466,7 +500,7 @@ export const CHAPTERS: Chapter[] = [
           },
           {
             t: "Plant them shallow",
-            d: "Plant in full sun, in loose soil, about 1 inch deep.",
+            d: "Plant in full sun and loose soil. Seed about a quarter to a half inch deep. Transplants deep enough to stand, often about 1 to 2 inches, not buried into the green. Sets point up, tip at or just under the surface. Where your packet or local extension differs, follow that.",
           },
           {
             t: "Tend the leaves",
@@ -507,12 +541,12 @@ export const CHAPTERS: Chapter[] = [
       },
       {
         kind: "table",
-        caption: "Match the packet to the latitude, then use your zone for the calendar.",
-        headers: ["Group", "Bulbs when days reach", "Where it belongs", "What you get"],
+        caption: "Approximate packet-selection guidance. Varieties inside a group differ — read the hours on the packet. Use your zone for frost dates, not to pick the group.",
+        headers: ["Group", "Bulbs when days reach", "Where it usually belongs", "What you often get"],
         rows: [
-          ["Short-day", "10–12 hours", "South of about 35°N, zones 7–11 as a fall crop", "Sweeter, thinner skins, one to three months stored"],
-          ["Intermediate", "12–14 hours", "Roughly 35–40°N, and the hinge of zones 5–7", "A middle crop; some store, many are sweet"],
-          ["Long-day", "14–16 hours", "North of about 40°N, zones 3–6 in spring", "Firmer, more pungent, the bulbs that can see the next spring"],
+          ["Short-day", "About 10–12 hours", "Often south of about 35°N, including cold zones in that band", "Often sweeter and thinner-skinned. Many keep one to three months. Red Creole and some others keep longer."],
+          ["Intermediate", "About 12–14 hours", "Often about 35–40°N. Not 'zones 5–7.'", "A middle crop. Some store, many are sweet. The packet beats the group."],
+          ["Long-day", "About 14–16 hours", "Often north of about 40°N, and mild coasts with long days", "Often firmer. Many pungent types store for months. Walla Walla and other sweets do not."],
         ],
       },
       {
@@ -591,7 +625,7 @@ export const CHAPTERS: Chapter[] = [
         src: "/plates/seedlings.jpg",
         alt: "A wooden flat of dense onion seedlings, some recently sheared flat across the top.",
         plate: "03",
-        caption: "Shear the tops back to about three inches when they flop. It thickens the plant. You can do it more than once.",
+        caption: "Shear indoor seedlings back to about three inches when they flop, so the flat stays easy to handle. You can do it more than once. It does not thicken the plant or make a bigger bulb. In the garden, do not cut or bend mature tops to hurry harvest. Let them fall on their own.",
       },
       {
         kind: "h",
@@ -602,19 +636,19 @@ export const CHAPTERS: Chapter[] = [
         items: [
           {
             t: "Match the seed to the day",
-            d: "Long-day north of about 40°N, short-day south of about 35°N, intermediate in the overlap. If you skip this, the rest is gardening in place.",
+            d: "Long-day north of about 40°N, short-day south of about 35°N, intermediate in the overlap. Those lines are approximate, and varieties differ. Read the packet. If you skip this, the rest is gardening in place.",
           },
           {
             t: "Make a bed the roots can enter",
-            d: "Full sun, six hours at a hard minimum and eight if you have it. Loose, drained soil, pH 6.0 to 6.8. Work in finished compost. Do not use fresh manure — it grows thick necks that rot in the sack. Stay off ground that grew any allium in the last three or four years.",
+            d: "Full sun, six hours at a hard minimum and eight if you have it. Loose, drained soil, pH 6.0 to 6.8. Work in finished compost. Do not use fresh manure — it grows thick necks that rot in the sack. A few years away from other alliums helps with ordinary pests and diseases. If the ground has had white rot, do not plant alliums there for decades.",
           },
           {
             t: "Start seed, or be picky with sets",
-            d: "Sow a quarter inch deep, ten to twelve weeks before planting out. Germination likes 65–75°F and can take seven to fourteen days. Old onion seed is a blank row; use seed one or two years old. After they emerge, give them the brightest light you have and cooler air, around 60–65°F, so they stay stocky rather than pale and prone.",
+            d: "Sow a quarter to a half inch deep, ten to twelve weeks before planting out. Germination likes 65–75°F and can take seven to fourteen days. Old onion seed is a blank row; use seed one or two years old. After they emerge, give them the brightest light you have and cooler air, around 60–65°F, so they stay stocky rather than pale and prone. Minnesota Extension, for one, uses that seed depth. Your packet or county office wins if it differs.",
           },
           {
             t: "Set them shallow and on time",
-            d: "Harden off for a week. Plant pencil-thick seedlings one inch deep, four inches apart for bulbs, two inches if you will eat the thinnings as scallions. Rows twelve to sixteen inches apart. Trim a tangled root mass back to a half inch and floppy tops to about four inches. Sets go point up, tip just under the surface.",
+            d: "Harden off for a week. Set pencil-thick transplants deep enough to stand — often about 1 to 2 inches, not down into the green. Minnesota Extension uses about 2 inches; other offices, including Illinois, give different transplant and set depths. Follow yours or the packet. Four inches apart for bulbs, two inches if you will eat the thinnings as scallions. Rows twelve to sixteen inches apart. Trim a tangled root mass back to a half inch. Floppy seedling tops may come back to about four inches so they are easier to plant. That does not grow a thicker bulb. Sets go point up, tip at or just under the surface.",
           },
           {
             t: "While the leaves are the factory",
@@ -662,14 +696,14 @@ export const CHAPTERS: Chapter[] = [
           },
           {
             t: "White rot",
-            d: "White fluff and black specks at the base. There is no cure to spray on. Do not compost those plants. Clean the tools before they visit another bed. The fungus can sit in soil for many years, which is why the rotation is not optional.",
+            d: "White fluff and black specks at the base. There is no cure to spray on. Do not compost those plants. Clean the tools before they visit another bed. A normal rotation does not clear it. The resting structures can survive in soil for 20 to 30 years, so land known to have white rot may be unfit for any allium for decades.",
           },
         ],
       },
       {
         kind: "note",
         title: "Six ways to lose the crop politely",
-        text: "Long-day seed in a short-day winter. Planting deeper than an inch. Fresh manure, or nitrogen after bulbing starts. Knocking the tops over by hand. Washing the bulbs before they cure. Saving seed from a single pretty bulb, from a hybrid, or from a plant that bolted in year one.",
+        text: "The wrong day-length group for your latitude. Burying seed an inch deep, or sinking transplants past the point where they stand. Fresh manure, or nitrogen after bulbing starts. Cutting or bending mature tops to hurry them. Washing the bulbs before they cure. Saving seed from only one bulb, from a hybrid, or from a plant that bolted in year one.",
       },
     ],
   },
@@ -681,7 +715,7 @@ export const CHAPTERS: Chapter[] = [
     blocks: [
       {
         kind: "p",
-        text: "A zone is the average coldest night, not a planting order. Two gardens in zone 7 do not share a spring. Use the windows below as the grid, then slide them toward your own last frost and your first hard heat. A half-zone, 7a against 7b, is worth about two weeks. The day-length choice beside the zone is not decoration. It changes the crop.",
+        text: "A zone is the average coldest night. It times frost, sowing, and harvest. It does not choose short-day, intermediate, or long-day — that is the day-length control, and it follows your latitude. A zone 5 garden in the southern mountains is not a northern onion. Two gardens in the same zone do not share a spring. Use the windows below as the grid, then slide them toward your own last frost and your first hard heat. A half-zone, 7a against 7b, is worth about two weeks.",
       },
       {
         kind: "p",
@@ -790,14 +824,14 @@ export const CHAPTERS: Chapter[] = [
           ["Humidity", "About 65–70%. Drier and they shrivel. Damper and they mold."],
           ["Air and light", "Dark, ventilated. Mesh bags, slatted crates, or a braid of fully dry necks. Never a sealed plastic bag."],
           ["Neighbors", "Away from apples and pears, which wake sprouts with ethylene, and away from potatoes, which want a wetter room."],
-          ["How long", "Pungent long-day types, six to eight months when the cure was real. Sweet short-day types, one to three months."],
+          ["How long", "The variety and the cure decide, not the day-length group. Many pungent long-day types keep six to eight months. Many sweet short-day types keep one to three months. Walla Walla is a long-day sweet and a poor keeper. Red Creole is a short-day type that keeps better than most of its group."],
           ["Upkeep", "Look once a month. One soft bulb ruins the ones touching it. Sprouted bulbs are still food — just take them out of the store."],
         ],
       },
       {
         kind: "note",
         title: "Seed stock is pickier than supper",
-        text: "Bulbs you mean to replant want the cold end of that range so they stay dormant and still receive the chilling that triggers next year's flower. Don't leave them in a warm kitchen beside the eating onions and hope. Label the crate. Twenty bulbs is a minimum population, not a wish for twenty. Disease, doubles, and a few that simply fail will cut the number before spring.",
+        text: "Bulbs you mean to replant want the cold end of that range so they stay dormant and still receive the chilling that triggers next year's flower. Don't leave them in a warm kitchen beside the eating onions and hope. Label the crate. Twenty bulbs is a practical minimum, not a cure for a narrow gene pool. A larger healthy group keeps more of the variety's diversity. Disease, doubles, and a few that simply fail will cut the number before spring.",
       },
     ],
   },
@@ -831,7 +865,7 @@ export const CHAPTERS: Chapter[] = [
           },
           {
             t: "A crowd, not a mascot",
-            d: "Each onion flower sheds its pollen before it is ready to receive pollen, so bees and other insects end up crossing one plant with another. Seed from a single plant or a few plants grows weak onions. Save from at least twenty bulbs, more if you can feed the row. One perfect bulb is an inbreeding project.",
+            d: "Each onion flower sheds its pollen before it is ready to receive pollen, so bees and other insects end up crossing one plant with another. A single plant, or only a few, raises the chance of inbreeding and a narrower gene pool. It does not guarantee that every onion from that seed will be weak. Twenty sound bulbs is a practical minimum. A larger healthy population does more to keep the variety diverse. One perfect bulb is an inbreeding project.",
           },
           {
             t: "Open-pollinated only",

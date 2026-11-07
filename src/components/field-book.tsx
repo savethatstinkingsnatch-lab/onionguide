@@ -653,6 +653,9 @@ function ZoneStudio({
       </div>
 
       <h2 className="mt-8 font-display text-2xl">Length of the summer day</h2>
+      <p className="mt-2 max-w-2xl text-sm text-muted">
+        This chooses the onion type. It follows your latitude, not the zone. A cold zone in the South still grows a short-day onion.
+      </p>
       <div className="mt-4 grid gap-2 sm:grid-cols-3" role="group" aria-label="Choose day length">
         {DAY_GROUPS.map((item) => {
           const selected = day === item.id;
