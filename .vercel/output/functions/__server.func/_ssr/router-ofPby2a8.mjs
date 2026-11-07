@@ -2,8 +2,8 @@ import { i as __toESM, n as __exportAll } from "../_runtime.mjs";
 import { K as require_react, _ as createFileRoute, b as require_jsx_runtime, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRoute, y as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as TriangleAlert } from "../_libs/lucide-react.mjs";
 import { a as union, i as string, n as number, r as object, t as literal } from "../_libs/zod.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CO2awacO.js
-var router_CO2awacO_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter });
+//#region node_modules/.nitro/vite/services/ssr/assets/router-ofPby2a8.js
+var router_ofPby2a8_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter });
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var FALLBACK_MESSAGE = "An unexpected error occurred. Try reloading the page.";
@@ -298,7 +298,7 @@ function PreviewHostBridge() {
 	return null;
 }
 var styles_default = "/assets/styles-_oGe7NUv.css";
-var APP_NAME = "The Onion Field Book";
+var APP_NAME = "Onions: Seed to Seed";
 var Route$1 = createRootRoute({
 	head: () => ({
 		meta: [
@@ -310,7 +310,7 @@ var Route$1 = createRootRoute({
 			{ title: APP_NAME },
 			{
 				name: "description",
-				content: "A field guide to growing onions from seed to storage: day length, USDA zones for planting and harvest, companion plants, and how to save and store onion seed."
+				content: "Onions: Seed to Seed, a free pocket guide by Blue and the Awesome Dudes. Day length, USDA zones, companion plants, and how to grow onions from seed to seed."
 			},
 			{
 				name: "theme-color",
@@ -360,7 +360,7 @@ var Route$1 = createRootRoute({
 		] })]
 	})
 });
-var $$splitComponentImporter = () => import("./routes-BTxghuvB.mjs");
+var $$splitComponentImporter = () => import("./routes-CWCGuS5F.mjs");
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter, "component") }).update({
 	id: "/",
 	path: "/",
@@ -374,4 +374,4 @@ function getRouter() {
 	});
 }
 //#endregion
-export { getRouter, router_CO2awacO_exports as t };
+export { getRouter, router_ofPby2a8_exports as t };

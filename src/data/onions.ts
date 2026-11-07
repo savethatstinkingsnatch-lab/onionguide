@@ -411,8 +411,82 @@ export const CHAPTERS: Chapter[] = [
     blocks: [],
   },
   {
-    id: "daylength",
+    id: "safe",
     num: "01",
+    title: "Stay safe",
+    deck: "Pets, wild plants, oil, and bulbs to throw out.",
+    blocks: [
+      {
+        kind: "bullets",
+        items: [
+          {
+            t: "Pets",
+            d: "Onions, garlic, leeks, chives, and shallots are poisonous to dogs and cats, raw, cooked, or powdered. Keep curing racks, scraps, and seed heads where pets cannot reach them.",
+          },
+          {
+            t: "Wild onions and death camas",
+            d: "Death camas looks a lot like wild onion and can kill. Real onions smell like onion when you crush a leaf. If it does not smell like onion, do not eat it. When in doubt, leave it. Your hands can carry the smell from one plant to the next, so wash them between plants.",
+          },
+          {
+            t: "Garlic or onion in oil",
+            d: "Fresh garlic or onion covered in oil can grow botulism at room temperature. Make it fresh, keep it in the refrigerator, and use it within 4 days, or freeze it. Never leave it on the counter.",
+          },
+          {
+            t: "Sprouted or moldy bulbs",
+            d: "Throw out soft, moldy, or slimy onions. Black powder on the skin is a mold. Do not store or replant those bulbs.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "start",
+    num: "02",
+    title: "Start here",
+    deck: "New to onions? Do these in order.",
+    blocks: [
+      {
+        kind: "p",
+        text: "New to onions? Do these in order.",
+      },
+      {
+        kind: "steps",
+        items: [
+          {
+            t: "Find your latitude",
+            d: "Search your town name plus \"latitude\".",
+          },
+          {
+            t: "Pick your onion type",
+            d: "South of about 35 degrees, grow short-day. Between 35 and 40, grow intermediate. North of 40, grow long-day.",
+          },
+          {
+            t: "Choose seed, sets, or transplants",
+            d: "Choose seed, small sets (smaller than a dime), or bundles of transplants.",
+          },
+          {
+            t: "Plant them shallow",
+            d: "Plant in full sun, in loose soil, about 1 inch deep.",
+          },
+          {
+            t: "Tend the leaves",
+            d: "Keep weeds out and water steady until the tops start falling over.",
+          },
+          {
+            t: "Pull and cure",
+            d: "Pull them on a dry day, then cure them in a shady, airy spot for 2 to 4 weeks.",
+          },
+          {
+            t: "Want seed?",
+            d: "Save 20 or more of your best bulbs, keep them cold over winter, and replant them in spring. They flower and make seed that summer.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "daylength",
+    num: "03",
     title: "Day length",
     deck: "The onion bulbs on a clock, not a birthday.",
     blocks: [
@@ -504,7 +578,7 @@ export const CHAPTERS: Chapter[] = [
   },
   {
     id: "season",
-    num: "02",
+    num: "04",
     title: "The season",
     deck: "From the flat to the day the tops fall.",
     blocks: [
@@ -601,7 +675,7 @@ export const CHAPTERS: Chapter[] = [
   },
   {
     id: "zones",
-    num: "03",
+    num: "05",
     title: "Zones",
     deck: "When to sow, set out, lift, and take seed.",
     blocks: [
@@ -623,7 +697,7 @@ export const CHAPTERS: Chapter[] = [
   },
   {
     id: "companions",
-    num: "04",
+    num: "06",
     title: "Companions",
     deck: "What earns a place in the bed, and what does not.",
     blocks: [
@@ -648,7 +722,7 @@ export const CHAPTERS: Chapter[] = [
   },
   {
     id: "bulb",
-    num: "05",
+    num: "07",
     title: "The bulb",
     deck: "Lift, cure, and store the eating crop.",
     blocks: [
@@ -729,7 +803,7 @@ export const CHAPTERS: Chapter[] = [
   },
   {
     id: "seed",
-    num: "06",
+    num: "08",
     title: "The seed",
     deck: "A second year, an umbel, and a jar.",
     blocks: [
@@ -757,7 +831,7 @@ export const CHAPTERS: Chapter[] = [
           },
           {
             t: "A crowd, not a mascot",
-            d: "Onions are largely self-incompatible. They need other onions, and insects, to set seed. Save from at least twenty bulbs, more if you can feed the row. One perfect bulb is an inbreeding project.",
+            d: "Each onion flower sheds its pollen before it is ready to receive pollen, so bees and other insects end up crossing one plant with another. Seed from a single plant or a few plants grows weak onions. Save from at least twenty bulbs, more if you can feed the row. One perfect bulb is an inbreeding project.",
           },
           {
             t: "Open-pollinated only",
@@ -841,7 +915,7 @@ export const CHAPTERS: Chapter[] = [
   },
   {
     id: "year",
-    num: "07",
+    num: "09",
     title: "Your year",
     deck: "The book, collapsed to one garden.",
     blocks: [
@@ -857,14 +931,16 @@ export const CHAPTERS: Chapter[] = [
       {
         kind: "glossary",
         items: [
-          { term: "Day length", def: "Hours of daylight that trigger bulbing. Not hours of sun, and not the USDA zone." },
+          { term: "Day length", def: "How many hours of daylight it takes before an onion starts making a bulb." },
+          { term: "Bolting", def: "The plant sends up a flower stalk too early, and the bulb gets woody." },
+          { term: "Scape", def: "The onion's flower stalk." },
+          { term: "Umbel", def: "The round ball of flowers on top of the scape." },
+          { term: "Vernalization", def: "The cold spell a bulb needs before it will flower." },
+          { term: "Isolation", def: "Keeping onion varieties apart so they don't cross." },
           { term: "Set", def: "A small dry bulb sold for replanting. Easy, and quicker to bolt if it is large." },
           { term: "Transplant", def: "A bareroot seedling. Plant it shallow and soon." },
           { term: "Neck", def: "The stem just above the bulb. Storage depends on it drying tight." },
           { term: "Cure", def: "The dry-down after harvest, before anything is trimmed or bagged." },
-          { term: "Scape", def: "The flower stalk. In year one it means that bulb will not store." },
-          { term: "Umbel", def: "The round seed head at the top of the scape." },
-          { term: "Vernalization", def: "The cold that convinces a bulb to flower the second year." },
           { term: "Open-pollinated", def: "A variety that can come true if you isolate it and save from enough plants." },
           { term: "Hybrid", def: "A planned cross, usually marked F1. Grow it. Don't save it and expect the same onion." },
         ],
@@ -873,6 +949,19 @@ export const CHAPTERS: Chapter[] = [
         kind: "note",
         title: "Where the dates come from",
         text: "The calendars follow cooperative-extension practice: short-day and fall-planted in the South, long-day and spring-planted in the North, with the latitude exception for mild marine climates that share a zone number with a much warmer place. Seed handling — isolation from other Allium cepa, including shallots; a group of bulbs rather than one; cool and very dry storage — is the home seed-saving standard. A hybrid packet will not come true. Move every window with your last frost, your first hard heat, and the year you actually get.",
+      },
+    ],
+  },
+
+  {
+    id: "about",
+    num: "10",
+    title: "About and disclaimer",
+    deck: "A pocket guide for learning.",
+    blocks: [
+      {
+        kind: "p",
+        text: "This pocket guide is for learning. Gardens, weather, and people differ. Check with your local county extension office for advice in your area. Never eat a wild plant you cannot identify for certain. Blue and the Awesome Dudes are not responsible for injury, illness, pet poisoning, or crop loss. Part of The Education Revolution pocket guide series.",
       },
     ],
   },

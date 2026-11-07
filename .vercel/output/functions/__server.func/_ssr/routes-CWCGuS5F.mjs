@@ -1,7 +1,7 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { K as require_react, b as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as Bookmark, i as Check, r as Menu, t as X } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BTxghuvB.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-CWCGuS5F.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var DAY_GROUPS = [
@@ -337,8 +337,77 @@ var CHAPTERS = [
 		blocks: []
 	},
 	{
-		id: "daylength",
+		id: "safe",
 		num: "01",
+		title: "Stay safe",
+		deck: "Pets, wild plants, oil, and bulbs to throw out.",
+		blocks: [{
+			kind: "bullets",
+			items: [
+				{
+					t: "Pets",
+					d: "Onions, garlic, leeks, chives, and shallots are poisonous to dogs and cats, raw, cooked, or powdered. Keep curing racks, scraps, and seed heads where pets cannot reach them."
+				},
+				{
+					t: "Wild onions and death camas",
+					d: "Death camas looks a lot like wild onion and can kill. Real onions smell like onion when you crush a leaf. If it does not smell like onion, do not eat it. When in doubt, leave it. Your hands can carry the smell from one plant to the next, so wash them between plants."
+				},
+				{
+					t: "Garlic or onion in oil",
+					d: "Fresh garlic or onion covered in oil can grow botulism at room temperature. Make it fresh, keep it in the refrigerator, and use it within 4 days, or freeze it. Never leave it on the counter."
+				},
+				{
+					t: "Sprouted or moldy bulbs",
+					d: "Throw out soft, moldy, or slimy onions. Black powder on the skin is a mold. Do not store or replant those bulbs."
+				}
+			]
+		}]
+	},
+	{
+		id: "start",
+		num: "02",
+		title: "Start here",
+		deck: "New to onions? Do these in order.",
+		blocks: [{
+			kind: "p",
+			text: "New to onions? Do these in order."
+		}, {
+			kind: "steps",
+			items: [
+				{
+					t: "Find your latitude",
+					d: "Search your town name plus \"latitude\"."
+				},
+				{
+					t: "Pick your onion type",
+					d: "South of about 35 degrees, grow short-day. Between 35 and 40, grow intermediate. North of 40, grow long-day."
+				},
+				{
+					t: "Choose seed, sets, or transplants",
+					d: "Choose seed, small sets (smaller than a dime), or bundles of transplants."
+				},
+				{
+					t: "Plant them shallow",
+					d: "Plant in full sun, in loose soil, about 1 inch deep."
+				},
+				{
+					t: "Tend the leaves",
+					d: "Keep weeds out and water steady until the tops start falling over."
+				},
+				{
+					t: "Pull and cure",
+					d: "Pull them on a dry day, then cure them in a shady, airy spot for 2 to 4 weeks."
+				},
+				{
+					t: "Want seed?",
+					d: "Save 20 or more of your best bulbs, keep them cold over winter, and replant them in spring. They flower and make seed that summer."
+				}
+			]
+		}]
+	},
+	{
+		id: "daylength",
+		num: "03",
 		title: "Day length",
 		deck: "The onion bulbs on a clock, not a birthday.",
 		blocks: [
@@ -450,7 +519,7 @@ var CHAPTERS = [
 	},
 	{
 		id: "season",
-		num: "02",
+		num: "04",
 		title: "The season",
 		deck: "From the flat to the day the tops fall.",
 		blocks: [
@@ -547,7 +616,7 @@ var CHAPTERS = [
 	},
 	{
 		id: "zones",
-		num: "03",
+		num: "05",
 		title: "Zones",
 		deck: "When to sow, set out, lift, and take seed.",
 		blocks: [
@@ -569,7 +638,7 @@ var CHAPTERS = [
 	},
 	{
 		id: "companions",
-		num: "04",
+		num: "06",
 		title: "Companions",
 		deck: "What earns a place in the bed, and what does not.",
 		blocks: [
@@ -594,7 +663,7 @@ var CHAPTERS = [
 	},
 	{
 		id: "bulb",
-		num: "05",
+		num: "07",
 		title: "The bulb",
 		deck: "Lift, cure, and store the eating crop.",
 		blocks: [
@@ -675,7 +744,7 @@ var CHAPTERS = [
 	},
 	{
 		id: "seed",
-		num: "06",
+		num: "08",
 		title: "The seed",
 		deck: "A second year, an umbel, and a jar.",
 		blocks: [
@@ -703,7 +772,7 @@ var CHAPTERS = [
 					},
 					{
 						t: "A crowd, not a mascot",
-						d: "Onions are largely self-incompatible. They need other onions, and insects, to set seed. Save from at least twenty bulbs, more if you can feed the row. One perfect bulb is an inbreeding project."
+						d: "Each onion flower sheds its pollen before it is ready to receive pollen, so bees and other insects end up crossing one plant with another. Seed from a single plant or a few plants grows weak onions. Save from at least twenty bulbs, more if you can feed the row. One perfect bulb is an inbreeding project."
 					},
 					{
 						t: "Open-pollinated only",
@@ -787,7 +856,7 @@ var CHAPTERS = [
 	},
 	{
 		id: "year",
-		num: "07",
+		num: "09",
 		title: "Your year",
 		deck: "The book, collapsed to one garden.",
 		blocks: [
@@ -805,7 +874,27 @@ var CHAPTERS = [
 				items: [
 					{
 						term: "Day length",
-						def: "Hours of daylight that trigger bulbing. Not hours of sun, and not the USDA zone."
+						def: "How many hours of daylight it takes before an onion starts making a bulb."
+					},
+					{
+						term: "Bolting",
+						def: "The plant sends up a flower stalk too early, and the bulb gets woody."
+					},
+					{
+						term: "Scape",
+						def: "The onion's flower stalk."
+					},
+					{
+						term: "Umbel",
+						def: "The round ball of flowers on top of the scape."
+					},
+					{
+						term: "Vernalization",
+						def: "The cold spell a bulb needs before it will flower."
+					},
+					{
+						term: "Isolation",
+						def: "Keeping onion varieties apart so they don't cross."
 					},
 					{
 						term: "Set",
@@ -824,18 +913,6 @@ var CHAPTERS = [
 						def: "The dry-down after harvest, before anything is trimmed or bagged."
 					},
 					{
-						term: "Scape",
-						def: "The flower stalk. In year one it means that bulb will not store."
-					},
-					{
-						term: "Umbel",
-						def: "The round seed head at the top of the scape."
-					},
-					{
-						term: "Vernalization",
-						def: "The cold that convinces a bulb to flower the second year."
-					},
-					{
 						term: "Open-pollinated",
 						def: "A variety that can come true if you isolate it and save from enough plants."
 					},
@@ -851,6 +928,16 @@ var CHAPTERS = [
 				text: "The calendars follow cooperative-extension practice: short-day and fall-planted in the South, long-day and spring-planted in the North, with the latitude exception for mild marine climates that share a zone number with a much warmer place. Seed handling — isolation from other Allium cepa, including shallots; a group of bulbs rather than one; cool and very dry storage — is the home seed-saving standard. A hybrid packet will not come true. Move every window with your last frost, your first hard heat, and the year you actually get."
 			}
 		]
+	},
+	{
+		id: "about",
+		num: "10",
+		title: "About and disclaimer",
+		deck: "A pocket guide for learning.",
+		blocks: [{
+			kind: "p",
+			text: "This pocket guide is for learning. Gardens, weather, and people differ. Check with your local county extension office for advice in your area. Never eat a wild plant you cannot identify for certain. Blue and the Awesome Dudes are not responsible for injury, illness, pet poisoning, or crop loss. Part of The Education Revolution pocket guide series."
+		}]
 	}
 ];
 function chapterIndex(id) {
@@ -966,7 +1053,7 @@ function FieldBook() {
 								className: "min-w-0 flex-1",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "truncate font-display text-lg leading-tight",
-									children: chapter.id === "front" ? "The Onion Field Book" : chapter.title
+									children: chapter.id === "front" ? "Onions: Seed to Seed" : chapter.title
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "truncate text-sm text-muted",
 									children: chapter.num ? `Chapter ${chapter.num}` : "Field guide"
@@ -1005,7 +1092,7 @@ function FieldBook() {
 								children: CHAPTERS.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChapterLink, {
 									id: item.id,
 									num: item.num,
-									title: item.id === "front" ? "The Onion Field Book" : item.title,
+									title: item.id === "front" ? "Onions: Seed to Seed" : item.title,
 									active: item.id === chapter.id,
 									marked: marks.includes(item.id),
 									onOpen: openChapter,
@@ -1019,26 +1106,33 @@ function FieldBook() {
 						className: "px-5 py-8 sm:px-8 lg:px-12 lg:py-12",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
 							className: "page-in mx-auto max-w-3xl",
-							children: [chapter.id === "front" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FrontMatter, {
-								marks,
-								onOpen: openChapter
-							}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChapterBody, {
-								num: chapter.num,
-								title: chapter.title,
-								deck: chapter.deck,
-								blocks: chapter.blocks,
-								marked,
-								onToggleMark: toggleMark,
-								zone,
-								day,
-								onZone: setZoneId,
-								onDay: setDay,
-								checks,
-								onToggleCheck: toggleCheck
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Pager, {
-								index,
-								onOpen: openChapter
-							})]
+							children: [
+								chapter.id === "front" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FrontMatter, {
+									marks,
+									onOpen: openChapter
+								}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChapterBody, {
+									num: chapter.num,
+									title: chapter.title,
+									deck: chapter.deck,
+									blocks: chapter.blocks,
+									marked,
+									onToggleMark: toggleMark,
+									zone,
+									day,
+									onZone: setZoneId,
+									onDay: setDay,
+									checks,
+									onToggleCheck: toggleCheck
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Pager, {
+									index,
+									onOpen: openChapter
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "mt-8 max-w-2xl text-sm text-muted",
+									children: "Privacy: This guide does not collect your name, email, or any personal information. Your zone, day-length choice, and checklist are saved only on your own device."
+								})
+							]
 						}, chapter.id)
 					})
 				]
@@ -1061,11 +1155,11 @@ function BookSpine({ chapterId, marks, zone, day, onOpen }) {
 					type: "button",
 					onClick: () => onOpen("front"),
 					className: `${press} mt-2 text-left font-display text-3xl leading-none`,
-					children: "The Onion Field Book"
+					children: "Onions: Seed to Seed"
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-3 text-sm leading-snug text-paper/75",
-					children: "Jessica McIntosh"
+					children: "Blue and the Awesome Dudes"
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-1 text-sm leading-snug text-paper/75",
@@ -1137,13 +1231,17 @@ function FrontMatter({ marks, onOpen }) {
 				height: 1600,
 				className: "w-full border border-ink/15"
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "text-sm text-amber",
+					children: "The Education Revolution Pocket Guide, Volume 8"
+				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-					className: "font-display text-5xl text-ink sm:text-6xl",
-					children: "The Onion Field Book"
+					className: "mt-2 font-display text-5xl text-ink sm:text-6xl",
+					children: "Onions: Seed to Seed"
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-3 font-display text-xl italic text-amber",
-					children: "Jessica McIntosh"
+					children: "Blue and the Awesome Dudes"
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-5 max-w-xl text-xl leading-snug text-ink",
@@ -1155,9 +1253,9 @@ function FrontMatter({ marks, onOpen }) {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 					type: "button",
-					onClick: () => onOpen("daylength"),
+					onClick: () => onOpen("safe"),
 					className: `${press} mt-8 inline-flex h-12 items-center bg-amber px-6 font-display text-lg text-paper`,
-					children: "Begin with day length"
+					children: "Begin with Stay safe"
 				})
 			] })]
 		}),
